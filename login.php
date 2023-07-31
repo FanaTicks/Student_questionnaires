@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify password using password_verify
         if (password_verify($password, $hashed_password)) {
             // Login success
-            header("Location: admin_dashboard.php"); // Redirect to admin dashboard
+            header("Location: main_admin.html"); // Redirect to admin dashboard
             exit;
         } else {
             echo "Неправильний логін або пароль";
