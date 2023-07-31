@@ -1,0 +1,32 @@
+CREATE TABLE Listeners (
+    Id_listeners INT PRIMARY KEY AUTO_INCREMENT,
+    Name_listeners VARCHAR(50),
+    Surname_listeners VARCHAR(50),
+    Contact_Information VARCHAR(100)
+);
+
+CREATE TABLE Tests (
+    Id_tests INT PRIMARY KEY AUTO_INCREMENT,
+    Description_tests TEXT,
+    Question_tests TEXT,
+    Answers_tests TEXT,
+    Time_tests TIME
+);
+
+CREATE TABLE Results (
+    Id_results INT PRIMARY KEY AUTO_INCREMENT,
+    ID_listeners INT,
+    ID_tests INT,
+    Rating_results INT,
+    Answers_results INT,
+    Interest_results FLOAT,
+    Time_results TIME,
+    FOREIGN KEY (ID_listeners) REFERENCES Listeners(Id_listeners),
+    FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests)
+);
+
+CREATE TABLE Administrator (
+    Id_administrator INT PRIMARY KEY AUTO_INCREMENT,
+    Login_administrator VARCHAR(50),
+    Password_administrator VARCHAR(50)
+);
