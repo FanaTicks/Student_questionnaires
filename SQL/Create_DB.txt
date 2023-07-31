@@ -28,5 +28,5 @@ CREATE TABLE Results (
 CREATE TABLE Administrator (
     Id_administrator INT PRIMARY KEY AUTO_INCREMENT,
     Login_administrator VARCHAR(50),
-    Password_administrator VARCHAR(50)
+    Password_administrator VARCHAR(100)
 );
