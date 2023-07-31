@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         $stmt->bind_result($hashed_password);
         $stmt->fetch();
+        print "$password  $hashed_password";
 
         // Verify password using password_verify
         if (password_verify($password, $hashed_password)) {
