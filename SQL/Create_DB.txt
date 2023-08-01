@@ -7,10 +7,24 @@ CREATE TABLE Listeners (
 
 CREATE TABLE Tests (
     Id_tests INT PRIMARY KEY AUTO_INCREMENT,
-    Description_tests TEXT,
-    Question_tests TEXT,
-    Answers_tests TEXT,
+    Name_test VARCHAR(50),
+    Question_quantity INT,
     Time_tests TIME
+);
+
+CREATE TABLE Questions(
+    Id_question INT AUTO_INCREMENT PRIMARY KEY,
+    Text_question VARCHAR(1000) NOT NULL,
+    ID_tests INT NOT NULL,
+    FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests) ON DELETE CASCADE
+);
+
+CREATE TABLE Answers(
+    Id_answer INT AUTO_INCREMENT PRIMARY KEY,
+    Answers_text VARCHAR(1000) NOT NULL,
+    Tr_answer BOOLEAN NOT NULL,
+    ID_question INT NOT NULL,
+    FOREIGN KEY (ID_question) REFERENCES Questions(Id_question) ON DELETE CASCADE
 );
 
 CREATE TABLE Results (
