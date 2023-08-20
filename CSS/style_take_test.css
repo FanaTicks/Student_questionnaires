@@ -1,0 +1,96 @@
+.test-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.test-container {
+    width: 800px; /* Задайте ширину контейнера, яка вам підходить */
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Забезпечує, що елементи не переносяться на новий рядок */
+}
+
+.user-info label,
+.user-info input,
+.user-info button {
+    margin: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 20%; /* Ви можете змінити ширину відповідно до своїх потреб */
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.back-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f00;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.test-title {
+    margin: 0;
+}
+
+.timer {
+    color: #f00;
+    font-weight: bold;
+}
+
+label, input, button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#questions-container .question {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}

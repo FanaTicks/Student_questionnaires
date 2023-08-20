@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проходження тесту</title>
+    <link rel="stylesheet" href="../../CSS/style_take_test.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../Controller/take_test_controller.js"></script>
+</head>
+<body>
+<div class="test-container">
+    <h1>Проходження тесту</h1>
+    <button type="button" onclick="window.location.href='main_menu.html'">Головне меню</button>
+    <div class="user-info">
+        <input type="text" name="first_name" id="first-name" placeholder="Ім'я" required>
+        <input type="text" name="last_name" id="last-name" placeholder="Фамілія" required>
+        <input type="email" name="email" id="email" placeholder="Пошта" required>
+        <button type="button" id="save-user">Зберегти</button>
+    </div>
+    <label for="test-name">Назва тесту:</label>
+    <input type="text" name="test_name" id="test-name" required>
+    <button type="button" id="start-test">Початок тесту</button>
+    <div id="timer">Час: <span id="test-time">00:00</span></div> <!-- Таймер -->
+    <form id="test-form" method="post">
+        <div id="questions-container"></div>
+        <button type="submit" id="submit-test">Здати</button>
+    </form>
+</div>
+</body>
+</html>

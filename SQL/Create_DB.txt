@@ -44,3 +44,17 @@ CREATE TABLE Administrator (
     Login_administrator VARCHAR(50),
     Password_administrator VARCHAR(100)
 );
+
+CREATE TABLE UserAnswers (
+    Id_user_answer INT AUTO_INCREMENT PRIMARY KEY,
+    ID_listeners INT NOT NULL,
+    ID_tests INT NOT NULL,
+    ID_answer INT NOT NULL,
+    ID_Results INT NOT NULL,
+    FOREIGN KEY (ID_listeners) REFERENCES Listeners(Id_listeners),
+    FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests),
+    FOREIGN KEY (ID_answer) REFERENCES Answers(Id_answer),
+    FOREIGN KEY (ID_Results) REFERENCES Results(ID_Results)
+);
+
+
