@@ -5,17 +5,28 @@ CREATE TABLE Listeners (
     Contact_Information VARCHAR(100)
 );
 
+CREATE TABLE Administrator (
+    Id_administrator INT PRIMARY KEY AUTO_INCREMENT,
+    Login_administrator VARCHAR(50),
+    Password_administrator VARCHAR(100)
+);
+
 CREATE TABLE Tests (
     Id_tests INT PRIMARY KEY AUTO_INCREMENT,
     Name_test VARCHAR(50),
     Question_quantity INT,
-    Time_tests TIME
+    Time_tests TIME,
+    Id_administrator INT,
+    Modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Url VARCHAR(255),
+    FOREIGN KEY (Id_administrator) REFERENCES Administrator(Id_administrator)
 );
 
 CREATE TABLE Questions(
     Id_question INT AUTO_INCREMENT PRIMARY KEY,
     Text_question VARCHAR(1000) NOT NULL,
     ID_tests INT NOT NULL,
+    Grade INT NOT NULL,
     FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests) ON DELETE CASCADE
 );
 
@@ -39,12 +50,6 @@ CREATE TABLE Results (
     FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests)
 );
 
-CREATE TABLE Administrator (
-    Id_administrator INT PRIMARY KEY AUTO_INCREMENT,
-    Login_administrator VARCHAR(50),
-    Password_administrator VARCHAR(100)
-);
-
 CREATE TABLE UserAnswers (
     Id_user_answer INT AUTO_INCREMENT PRIMARY KEY,
     ID_listeners INT NOT NULL,
@@ -54,5 +59,3 @@ CREATE TABLE UserAnswers (
     FOREIGN KEY (ID_tests) REFERENCES Tests(Id_tests),
     FOREIGN KEY (ID_answer) REFERENCES Answers(Id_answer)
 );
-
-
